@@ -145,23 +145,17 @@
           point: 11
         },
       ];
-      window.createRandomPhoto = function (min, max) {
-        var numReserve = [];
-        while (numReserve.length < 36) {
-          var randomNumber = Math.floor(Math.random() * (max - min)) + min;
-          var found = false;
-          for (var i = 1; i < numReserve.length; i++) {
-            if (numReserve[i] === randomNumber) {
-              found = true;
-              break;
-            }
-          }
-          if (!found) {
-            numReserve[numReserve.length] = randomNumber;
-          }
+
+      window.shuffle = function(array) {
+        var currentIndex = array.length, temporaryValue, randomIndex ;
+        while (0 !== currentIndex) {
+          randomIndex = Math.floor(Math.random() * currentIndex);
+          currentIndex -= 1;
+          temporaryValue = array[currentIndex];
+          array[currentIndex] = array[randomIndex];
+          array[randomIndex] = temporaryValue;
         }
-        return numReserve;
-      };
-      window.run = window.createRandomPhoto(1, 36);
-      
+        return array;
+      }
+      window.run = window.shuffle([1, 2, 3, 4, 5, 6, 7, 8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36]);
 })();

@@ -44,21 +44,21 @@
         var timeSecond = time + 1000;
         var timeThird = timeSecond + 1000;
         var timeFourth = timeThird + 1000;
+        dealCardForGamer(window.gamerData.firstGamer, currentTransformGamerLeft, time);
         if (amountGamer == 2) {
-            dealCardForGamer( window.gamerData.secondGamer, currentTransformGamerRight, timeSecond);
+            dealCardForGamer(window.gamerData.secondGamer, currentTransformGamerRight, timeSecond);
         } else if (amountGamer == 3) {
-            firstGamer.bottom = 60;
-            secondGamer.bottom = 60;
+            window.gamerData.firstGamer.bottom = 60;
+            window.gamerData.secondGamer.bottom = 60;
             dealCardForGamer(window.gamerData.secondGamer, currentTransformGamerRight, timeSecond);
             dealCardForGamer(window.gamerData.thirdGamer, currentTransformGamerLeft, timeThird);
         } else if (amountGamer == 4) {
-            firstGamer.bottom = 60;
-            secondGamer.bottom = 60;
+            window.gamerData.firstGamer.bottom = 60;
+            window.gamerData.secondGamer.bottom = 60;
             dealCardForGamer(window.gamerData.secondGamer, currentTransformGamerRight, timeSecond);
             dealCardForGamer(window.gamerData.thirdGamer, currentTransformGamerLeft, timeThird);
             dealCardForGamer(window.gamerData.fourthGamer, currentTransformGamerRight, timeFourth);
         }
-        dealCardForGamer(window.gamerData.firstGamer, currentTransformGamerLeft, time);
         return amountGamer;
     });
     btnStill.addEventListener('click', function () {
@@ -75,7 +75,6 @@
         btnStill.disabled = 'disabled';
         btnStop.disabled = 'disabled';
         window.dealGamer.openCardGemer(current, window.gamerData.firstGamer, rundom, currentTransformGamerLeft);
-            ;
     });
 
 })();

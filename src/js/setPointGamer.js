@@ -10,7 +10,7 @@
         setOfPoints(object, transform, rundom, current);
        } else if (object.sum > 10 && object.sum <= 14 && probability <= 98) {
         setOfPoints(object, transform, rundom, current);
-       } else if (object.sum > 14 && object.sum <= 17 && probability <= 70) {
+       } else if (object.sum > 14 && object.sum <= 17 && probability <= 78) {
         setOfPoints(object, transform, rundom, current);
         } else if(object.sum > 17 && object.sum <= 19 && probability <= 30) {
           setOfPoints(object, transform, rundom, current);
