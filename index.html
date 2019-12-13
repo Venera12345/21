@@ -17,37 +17,37 @@
          <h1 class="visually-hidden">Casino 21</h1>
          <section class="players playing-field">
 <ul class="list-players">
-    <li class="item-player">
-        <ul class="list-player-cards">
+    <li class="item-player hidden">
+        <ul class="list-player-cards first gamer">
             <li class="item-player-card"></li>
         </ul>
         <span class="player-name">John</span>
-        <sapn class="player-points">0</sapn>
+        <sapn class="player-points first">0</sapn>
     </li>
-    <li class="item-player" display="none">
-        <ul class="list-player-cards">
+    <li class="item-player hidden" display="none">
+        <ul class="list-player-cards second gamer">
             <li class="item-player-card"></li>
         </ul>
         <span class="player-name">Tom</span>
-        <sapn class="player-points">0</sapn>
+        <sapn class="player-points second">0</sapn>
     </li>
-    <li class="item-player">
-        <ul class="list-player-cards">
+    <li class="item-player hidden">
+        <ul class="list-player-cards third gamer">
             <li class="item-player-card"></li>
         </ul>
         <span class="player-name">Sylvia</span>
-        <sapn class="player-points">0</sapn>
+        <sapn class="player-points .third">0</sapn>
     </li>
-    <li class="item-player">
-        <ul class="list-player-cards">
+    <li class="item-player hidden">
+        <ul class="list-player-cards fourth gamer">
             <li class="item-player-card"></li>
         </ul>
         <span class="player-name">Kate</span>
-        <sapn class="player-points">0</sapn>
+        <sapn class="player-points .fourth">0</sapn>
     </li>
     <li class="item-player user">
      <button class="btn-still">still</button>
-        <ul class="list-player-cards">
+        <ul class="list-player-cards main-user">
             <li class="item-player-card"></li>
         </ul>
         <button class="btn-stop">stop</button>
@@ -59,52 +59,56 @@
     <button class="btn-distribution">distribution</button>
 </div>
          </section>
-<section class="cards">
-    <ul class="list-cards">
-        <li class="item-card shirt"></li>
-        <li class="item-card 6b"></li>
-        <li class="item-card 7b"></li>
-        <li class="item-card 8b"></li>
-        <li class="item-card 9b"></li>
-        <li class="item-card 10b"></li>
-        <li class="item-card jb"></li>
-        <li class="item-card lb"></li>
-        <li class="item-card kb"></li>
-        <li class="item-card ab"></li>
-        <li class="item-card 6t"></li>
-        <li class="item-card 7t"></li>
-        <li class="item-card 8t"></li>
-        <li class="item-card 9t"></li>
-        <li class="item-card 10t"></li>
-        <li class="item-card jt"></li>
-        <li class="item-card lt"></li>
-        <li class="item-card kt"></li>
-        <li class="item-card at"></li>
-        <li class="item-card 6p"></li>
-        <li class="item-card 7p"></li>
-        <li class="item-card 8p"></li>
-        <li class="item-card 9p"></li>
-        <li class="item-card 10p"></li>
-        <li class="item-card jp"></li>
-        <li class="item-card lp"></li>
-        <li class="item-card kp"></li>
-        <li class="item-card ap"></li>
-        <li class="item-card 6h"></li>
-        <li class="item-card 7h"></li>
-        <li class="item-card 8h"></li>
-        <li class="item-card 9h"></li>
-        <li class="item-card 10h"></li>
-        <li class="item-card jh"></li>
-        <li class="item-card lh"></li>
-        <li class="item-card kh"></li>
-        <li class="item-card ah"></li>
-    </ul>
-</section>
      </main>
      <footer class="footer">
      <p class="user-name-block"><span class="title-name">Name: </span><span class="user-name">Venus</span></p>
      <p class="user-points-block"><span class="title-points">Points: </span><span class="user-points">0</span></p>
      </footer>
+     <section class="wellcom">
+         <h2 class="greeting">Wellcom to casino 21!</h2>
+         <p class="greeting-text">We hope you have a good time!</p>
+         <button type="button" class="begin">begin</button>
+     </section>
+     <section class="name-main-user">
+         <form action="#">
+                <p class="title-name-user">How can we call you?</p>
+                <input type="text" class="input-btn">
+                <button type="button" class="name-btn">I am</button>
+         </form>    
+    </section>
+     <section class="amount-users">
+            <form action="#">
+         <p class="bold-text"><span>Dear, </span><span class="text-name-js">Jhon</span><span>!</span></p>
+         <div class="container-user">
+         <p class="amoutn-text">Please, choose quantity gamers</p>
+        
+         <select name="gamers" id="gamers" class="amount">
+             <option value="1">1</option>
+             <option value="2">2</option>
+             <option value="3">3</option>
+             <option value="4">4</option>
+         </select>
+        </div>
+         <button type="button" class="gamers-btn">gamers</button>
+       
+         </form>
+     </section>
+     <section class="cogratulation">
+        <h2 class="greeting">Congratulations!!!</h2>
+        <p class="greeting-text">You are winner!!!</p>
+        <button type="button" class="again">Again</button>
+    </section>
+    <section class="game-over">
+        <h2 class="greeting">Game over!</h2>
+        <p class="greeting-text">Try again!</p>
+        <button type="button" class="again">Again</button>
+    </section>
+     <template class="cards" id="card">
+        <ul class="list-cards">
+            <li class="item-card"></li>
+        </ul>
+     </template>
+<script src='./build/js/script.js'></script>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

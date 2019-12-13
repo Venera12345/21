@@ -14,7 +14,13 @@ const cssFiles = [
 ]
 //const with the connection order file js
 const jsFiles = [
-    './src/js/script.js'
+    './src/js/btn.js',
+    './src/js/popup.js',
+    './src/js/deck.js',
+    './src/js/cardData.js',
+    './src/js/setPointGamer.js',
+    './src/js/cardsOpen.js',
+    './src/js/gamerData.js'
 ]
 //function styles css
 function styles () {
