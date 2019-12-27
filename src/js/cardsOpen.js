@@ -3,6 +3,8 @@
     var gameOver =  document.querySelector('.game-over');
     var calculate = function (valueCard, gemer) {
         gemer.sum += valueCard;
+        console.log(gemer.sum)
+        return gemer.sum;
     };
     var openCard = function (item, indexRundom, gamer) {
     var valueCard = window.cardsData[indexRundom];

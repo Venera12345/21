@@ -3,33 +3,19 @@
     var btnStill = document.querySelector('.btn-still');
     var btnStop = document.querySelector('.btn-stop');
     var current = 0;
-    var currentTransform = 40;
-    var currentTransformGamerLeft = 25;
-    var currentTransformGamerRight = -25;
     var rundom;
     var amountGamer;
-   
-
     setTimeout(function () {
         rundom = window.run;
         return rundom;
     }, 1000);
 
-    var dealCardForGamer = function (user, Transform, time) {
-        setTimeout(function () {
-            window.deck.dealCard(user, Transform);
-            setTimeout(function () {
-                window.deck.dealCard(user, Transform);
-            }, 500);
-        }, time);
-    };
-
     btnDistribution.addEventListener('click', function () {
         amountGamer = window.popup.amountGamer;
-        window.deck.dealCard(window.gamerData.user, currentTransform);
+        window.deck.dealCard(window.gamerData.user);
         setTimeout(function () {
-            window.deck.dealCard(window.gamerData.user, currentTransform);
-            currentTransform += 40;
+            window.deck.dealCard(window.gamerData.user);
+            window.gamerData.user.currentTransform += 40;
         }, 700);
         setTimeout(function () {
             var itemUserCards = window.gamerData.user.place.querySelectorAll('.item-card');
@@ -40,30 +26,26 @@
                 return current;
             });
         }, 2200);
-        var time = 3000;
-        var timeSecond = time + 1000;
-        var timeThird = timeSecond + 1000;
-        var timeFourth = timeThird + 1000;
-        dealCardForGamer(window.gamerData.firstGamer, currentTransformGamerLeft, time);
+        window.deck.dealCardForGamer(window.gamerData.gamers[0]);
         if (amountGamer == 2) {
-            dealCardForGamer(window.gamerData.secondGamer, currentTransformGamerRight, timeSecond);
+            window.deck.dealCardForGamer(window.gamerData.gamers[1]);
         } else if (amountGamer == 3) {
-            window.gamerData.firstGamer.bottom = 60;
-            window.gamerData.secondGamer.bottom = 60;
-            dealCardForGamer(window.gamerData.secondGamer, currentTransformGamerRight, timeSecond);
-            dealCardForGamer(window.gamerData.thirdGamer, currentTransformGamerLeft, timeThird);
+            window.gamerData.gamers[0].bottom = 60;
+            window.gamerData.gamers[1].bottom = 60;
+            window.deck.dealCardForGamer(window.gamerData.gamers[1]);
+            window.deck.dealCardForGamer(window.gamerData.gamers[2]);
         } else if (amountGamer == 4) {
-            window.gamerData.firstGamer.bottom = 60;
-            window.gamerData.secondGamer.bottom = 60;
-            dealCardForGamer(window.gamerData.secondGamer, currentTransformGamerRight, timeSecond);
-            dealCardForGamer(window.gamerData.thirdGamer, currentTransformGamerLeft, timeThird);
-            dealCardForGamer(window.gamerData.fourthGamer, currentTransformGamerRight, timeFourth);
+            window.gamerData.gamers[0].bottom = 60;
+            window.gamerData.gamers[1].bottom = 60;
+            window.deck.dealCardForGamer(window.gamerData.gamers[1]);
+            window.deck.dealCardForGamer(window.gamerData.gamers[2]);
+            window.deck.dealCardForGamer(window.gamerData.gamers[3]);
         }
         return amountGamer;
     });
     btnStill.addEventListener('click', function () {
-        window.deck.dealCard(window.gamerData.user, currentTransform);
-        currentTransform += 40;
+        window.deck.dealCard(window.gamerData.user);
+        window.gamerData.user.currentTransform += 40;
         setTimeout(function () {
             var newItemUserCards = window.gamerData.user.place.querySelectorAll('.item-card');
             window.card.openCard(newItemUserCards[newItemUserCards.length - 1], rundom[current], window.gamerData.user);
@@ -71,10 +53,11 @@
             return current;
         }, 1000);
     });
+
     btnStop.addEventListener('click', function () {
         btnStill.disabled = 'disabled';
         btnStop.disabled = 'disabled';
-        window.dealGamer.openCardGemer(current, window.gamerData.firstGamer, rundom, currentTransformGamerLeft);
+        window.dealGamer.openCardGemer(current, window.gamerData.gamers, rundom, 0);  
     });
 
 })();
