@@ -2,62 +2,82 @@
     var btnDistribution = document.querySelector('.btn-distribution');
     var btnStill = document.querySelector('.btn-still');
     var btnStop = document.querySelector('.btn-stop');
+    var gamers = document.querySelectorAll('.item-player');
+    var btnAgain = document.querySelectorAll('.again');
     var current = 0;
-    var rundom;
-    var amountGamer;
-    setTimeout(function () {
-        rundom = window.run;
-        return rundom;
-    }, 1000);
-
     btnDistribution.addEventListener('click', function () {
+        console.log(current);
         amountGamer = window.popup.amountGamer;
-        window.deck.dealCard(window.gamerData.user);
+        window.deal.dealCard(window.gamerData.user);
         setTimeout(function () {
-            window.deck.dealCard(window.gamerData.user);
+            window.deal.dealCard(window.gamerData.user);
             window.gamerData.user.currentTransform += 40;
         }, 700);
         setTimeout(function () {
             var itemUserCards = window.gamerData.user.place.querySelectorAll('.item-card');
             [].forEach.call(itemUserCards, function (item) {
-                window.card.openCard(item, rundom[current], window.gamerData.user);
+                window.card.openCard(item, window.popup.rundom[current], window.gamerData.user);
                 current++;
                 btnDistribution.disabled = 'disabled';
                 return current;
             });
         }, 2200);
-        window.deck.dealCardForGamer(window.gamerData.gamers[0]);
-        if (amountGamer == 2) {
-            window.deck.dealCardForGamer(window.gamerData.gamers[1]);
-        } else if (amountGamer == 3) {
+        if (amountGamer > 2) {
             window.gamerData.gamers[0].bottom = 60;
             window.gamerData.gamers[1].bottom = 60;
-            window.deck.dealCardForGamer(window.gamerData.gamers[1]);
-            window.deck.dealCardForGamer(window.gamerData.gamers[2]);
-        } else if (amountGamer == 4) {
-            window.gamerData.gamers[0].bottom = 60;
-            window.gamerData.gamers[1].bottom = 60;
-            window.deck.dealCardForGamer(window.gamerData.gamers[1]);
-            window.deck.dealCardForGamer(window.gamerData.gamers[2]);
-            window.deck.dealCardForGamer(window.gamerData.gamers[3]);
+        } else {
+            window.gamerData.gamers[0].bottom = 0;
+            window.gamerData.gamers[1].bottom = 0;
         }
-        return amountGamer;
+        for (var i = 0; i < amountGamer; i++) {
+            window.deal.dealCardForGamer(window.gamerData.gamers[i]);
+        }
     });
     btnStill.addEventListener('click', function () {
-        window.deck.dealCard(window.gamerData.user);
-        window.gamerData.user.currentTransform += 40;
+        window.gamerData.user.transform += 40;
+        window.deal.dealCard(window.gamerData.user);
         setTimeout(function () {
             var newItemUserCards = window.gamerData.user.place.querySelectorAll('.item-card');
-            window.card.openCard(newItemUserCards[newItemUserCards.length - 1], rundom[current], window.gamerData.user);
+            window.card.openCard(newItemUserCards[newItemUserCards.length - 1], window.popup.rundom[current], window.gamerData.user);
             current++;
             return current;
         }, 1000);
+        window.total.congratulateUser(window.gamerData.user);
     });
 
     btnStop.addEventListener('click', function () {
+        console.log(current);
         btnStill.disabled = 'disabled';
         btnStop.disabled = 'disabled';
-        window.dealGamer.openCardGemer(current, window.gamerData.gamers, rundom, 0);  
+        window.dealGamer.openCardGemer(current, window.gamerData.gamers, window.popup.rundom, 0);
+    });
+
+    [].forEach.call(btnAgain, function (item) {
+        item.addEventListener('click', function () {
+            item.parentElement.classList.remove('show');
+            current = 0;
+            window.popup.popupAmount.classList.add('show');
+            window.gamerData.user.transform = 40;
+            window.gamerData.user.sum = 0;
+            window.gamerData.gamers.forEach(function (item, i) {
+                item.sum = 0;
+                if (i === 0 || i === 2) {
+                    item.transform = 25;
+                } else {
+                    item.transform = -25;
+                }
+
+            });
+            btnDistribution.removeAttribute('disabled');
+            btnStill.removeAttribute('disabled');
+            btnStop.removeAttribute('disabled');
+            var spanUser = document.querySelector('.user-points-block .user-points');
+            spanUser.textContent = '0';
+            [].forEach.call(gamers, function (item) {
+                window.cleanDesk(item);
+            });
+            return current;
+        });
     });
 
 })();

@@ -16,11 +16,13 @@ const cssFiles = [
 const jsFiles = [
     './src/js/btn.js',
     './src/js/popup.js',
-    './src/js/deck.js',
+    './src/js/feirstDeal.js',
     './src/js/cardData.js',
-    './src/js/setPointGamer.js',
+    './src/js/dealGamer.js',
     './src/js/cardsOpen.js',
-    './src/js/gamerData.js'
+    './src/js/gamerData.js',
+    './src/js/total.js',
+    './src/js/startAgain.js'
 ]
 //function styles css
 function styles () {
