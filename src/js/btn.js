@@ -6,7 +6,6 @@
     var btnAgain = document.querySelectorAll('.again');
     var current = 0;
     btnDistribution.addEventListener('click', function () {
-        console.log(current);
         amountGamer = window.popup.amountGamer;
         window.deal.dealCard(window.gamerData.user);
         setTimeout(function () {

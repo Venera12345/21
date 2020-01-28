@@ -22,7 +22,8 @@ const jsFiles = [
     './src/js/cardsOpen.js',
     './src/js/gamerData.js',
     './src/js/total.js',
-    './src/js/startAgain.js'
+    './src/js/startAgain.js',
+    './src/js/help.js'
 ]
 //function styles css
 function styles () {

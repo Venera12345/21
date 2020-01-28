@@ -13,6 +13,7 @@
     var userDesck = document.querySelector('.user .list-player-cards');
     var amountGamer;
     var rundom;
+    var current = 1;
     var openPopup = function (item) {
         item.classList.add('show');
     };
@@ -32,7 +33,10 @@
     });
     btnGamers.addEventListener('click', function () {
         amountGamer = selectAmount.value;
-
+        if(current === 1){
+          window.help();
+          current++;
+        }
         [].forEach.call(itemPlayers, function (item, i) {
             if (amountGamer >= i + 1) {
                 item.classList.remove('hidden');
@@ -52,4 +56,5 @@
             popupAmount: popupAmount
         }
     });
+    
 })();

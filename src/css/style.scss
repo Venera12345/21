@@ -490,7 +490,7 @@ body {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-
+    position: relative;
     .user-name-block {
         margin: 0;
         padding: 0;
@@ -800,6 +800,25 @@ body {
     }
 }
 
+@keyframes jump-help {
+    0% {
+        top: 30px;
+    }
+
+    100% {
+        top: 48px;
+    }
+}
+@keyframes jump-help-more {
+    0% {
+        top: -170px;
+    }
+
+    100% {
+        top: -180px;
+    }
+}
+
 .animation {
     animation-name: deal-main-user;
     animation-duration: 1s;
@@ -830,4 +849,45 @@ body {
 .rotate {
     animation-name: open-card;
     animation-duration: 0.5s;
+}
+.help {
+    background-color: rgba($color: #fff, $alpha: 0.7);
+    width: 232px;
+    position: absolute;
+    text-align: center;
+    border-radius: 5px;
+    padding: 10px;
+    z-index: 20;
+   
+    &::after {
+        content: ' ';
+        display: block;
+        border: 17px solid rgba($color: #fff, $alpha: 0.7);
+    border-bottom: 0;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    width: 0;
+    position: absolute;
+    top: 68px;
+    left: 50%;
+    transform: translateX(-50%)
+    }
+    .text-help {
+        @extend %text;
+        color: #000;
+        margin: 0;
+    }
+}
+.animation-help {
+    animation: jump-help infinite alternate 0.5s;
+}
+.animation-help-more {
+    animation: jump-help-more infinite alternate 0.5s;
+}
+.help-more {
+    left: 180px;
+}
+.help-stop {
+    width: 350px;
+    right: 120px;
 }
