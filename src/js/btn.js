@@ -45,7 +45,6 @@
     });
 
     btnStop.addEventListener('click', function () {
-        console.log(current);
         btnStill.disabled = 'disabled';
         btnStop.disabled = 'disabled';
         window.dealGamer.openCardGemer(current, window.gamerData.gamers, window.popup.rundom, 0);
@@ -53,7 +52,7 @@
 
     [].forEach.call(btnAgain, function (item) {
         item.addEventListener('click', function () {
-            item.parentElement.classList.remove('show');
+            item.parentElement.parentElement.classList.remove('show');
             current = 0;
             window.popup.popupAmount.classList.add('show');
             window.gamerData.user.transform = 40;

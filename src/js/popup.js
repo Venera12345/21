@@ -1,7 +1,7 @@
 (function () {
-    var wellcom = document.querySelector('.wellcom');
-    var popupName = document.querySelector('.name-main-user');
-    var popupAmount = document.querySelector('.amount-users');
+    var wellcom = document.querySelector('.wellcom-wrapper');
+    var popupName = document.querySelector('.name-main-user-wrapper');
+    var popupAmount = document.querySelector('.amount-users-wrapper');
     var btnBegin = document.querySelector('.begin');
     var btnName = document.querySelector('.name-btn');
     var inputName = document.querySelector('.input-btn');

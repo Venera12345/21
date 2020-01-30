@@ -1,7 +1,7 @@
 (function () {
-  var congratulations = document.querySelector('.cogratulation');
-  var gameOver = document.querySelector('.game-over');
-  var gameDeadHeat = document.querySelector('.game-dead-heat');
+  var congratulations = document.querySelector('.cogratulation-wrapper');
+  var gameOver = document.querySelector('.game-over-wrapper');
+  var gameDeadHeat = document.querySelector('.game-dead-heat-wrapper');
   var showPopup = function (item) {
     setTimeout(function () {
       item.classList.add('show');

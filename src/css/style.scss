@@ -510,7 +510,7 @@ body {
 
 .wellcom {
     @extend %popup;
-    display: none;
+    display: flex;
 
     .greeting {
         @extend %text;
@@ -538,7 +538,7 @@ body {
 
 .name-main-user {
     @extend %popup;
-    display: none;
+    display: flex;
 
     form {
         display: flex;
@@ -574,7 +574,7 @@ body {
 
 .amount-users {
     @extend %popup;
-    display: none;
+    display: flex;
 
     form {
         display: flex;
@@ -623,7 +623,7 @@ body {
 .cogratulation {
     @extend %popup;
     background-image: url('../../dist/img/494b581df09797d62f33d162806f708e.jpg');
-    display: none;
+    display: flex;
     z-index: 9;
 
     .greeting {
@@ -655,7 +655,7 @@ body {
     background-image: url('../../dist/img/2735454.jpg');
     background-position: 100%;
     background-size: 103%;
-    display: none;
+    display: flex;
     z-index: 9;
 
     .greeting {
@@ -685,7 +685,7 @@ body {
 .game-dead-heat {
     @extend %popup;
     background-image: url('../../dist/img/shaking-hands-3213665_960_720.jpg');
-    display: none;
+    display: flex;
     z-index: 9;
 
     .greeting {
@@ -711,6 +711,22 @@ body {
         background: linear-gradient(to bottom, #F36666, #F30401);
     }
 }
+
+.game-dead-heat-wrapper,
+.cogratulation-wrapper,
+.game-over-wrapper,
+.amount-users-wrapper,
+.name-main-user-wrapper,
+.wellcom-wrapper {
+  display: none;
+  width: 100%;
+  position: fixed;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  z-index: 10;
+}
+
 
 .show {
     display: flex !important;
@@ -885,9 +901,9 @@ body {
     animation: jump-help-more infinite alternate 0.5s;
 }
 .help-more {
-    left: 180px;
+    left: 30%;
 }
 .help-stop {
     width: 350px;
-    right: 120px;
+    right: 30%;
 }

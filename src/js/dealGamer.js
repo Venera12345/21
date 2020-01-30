@@ -14,11 +14,13 @@
 
     setTimeout(function () {
       checkPoint(gamer, rundom, current, i);
+      console.log(current +'openCardGemer');
     }, 1000);
     return current;
   };
   var setOfPoints = function (object, rundom, current, i) {
     setTimeout(function () {
+      console.log(current +'setOfPoints1');
       window.deal.dealCard(object[i]);
       var newItemsGamer = object[i].place.querySelectorAll('.item-card');
       setTimeout(function () {
@@ -33,6 +35,7 @@
       setTimeout(function () {
         checkPoint(object, rundom, current, i);
       }, 1500);
+      console.log(current +'setOfPoints2');
       return current;
     }, 1000);
   };
@@ -58,14 +61,12 @@
       if (i !== amount - 1) {
         setOfPointsGamers(object, current, rundom, amount, i + 1);
       } else {
-        console.log('результат');
         window.total.compareSum();
       }
     } else if (object[i].sum > 21) {
       if (i !== amount - 1) {
         setOfPointsGamers(object, current, rundom, amount, i + 1);
       } else {
-        console.log('результат');
         window.total.compareSum();
       }
     } else {
@@ -73,7 +74,6 @@
         setOfPointsGamers(object, current, rundom, amount, i + 1);
       } else {
         window.total.compareSum();
-        console.log('результат');
       }
     }
   };
@@ -81,6 +81,7 @@
     if (amount > 1) {
       current += 1;
       openCardGemer(current, object, rundom, i);
+      console.log(current +'setOfPointsGamers');
     }
   };
   window.dealGamer = {
